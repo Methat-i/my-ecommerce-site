@@ -15,7 +15,7 @@ var server = http.createServer(function (req, res) {
 const extname = path.extname(filePath);
 let contaentType = "text/html";
 if(extname ===".css") contaentType = "text/css";
-
+if(extname ===".xml") contaentType = "text/xml";
    fs.readFile(filePath,function(err, htmlDoc){
     if(err){
         res.writeHead(404,{'Content-Type': 'text/html'});
@@ -28,4 +28,4 @@ if(extname ===".css") contaentType = "text/css";
  
   
 })
-server.listen(8080);
+server.listen(4000);
